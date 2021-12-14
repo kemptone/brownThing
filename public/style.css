@@ -28,6 +28,7 @@ main {
   box-sizing: border-box;
   border: 0;
   outline: 1px solid black;
+  color:black;
 }
 
 .letters button.control.space {
