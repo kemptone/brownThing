@@ -29,6 +29,7 @@ main {
   border: 0;
   outline: 1px solid black;
   color:black;
+  background-color:white;
 }
 
 .letters button.control.space {
