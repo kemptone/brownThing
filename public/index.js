@@ -62,6 +62,11 @@ const BuildMain = Page => args => {
   const e_fragment = document.createDocumentFragment()
   Page.letters.forEach( BuildLetter( Page, e_fragment ) )
 
+  BuildControl(Page, e_fragment)( "SPACE", "space", e => {
+    Page.values.push(" ")
+    updateDisplay()
+  } )
+
   BuildControl(Page, e_fragment)( "✮", "toggle-letters", e => {
     Page.e_letters.classList.add("show-letters")
     Page.e_letters.classList.remove("show-numbers")
@@ -74,8 +79,8 @@ const BuildMain = Page => args => {
 
   BuildControl(Page, e_fragment)( "♺", "clear", ClearReadout(Page) )
 
-  BuildControl(Page, e_fragment)( "SPACE", "space", e => {
-    Page.values.push(" ")
+  BuildControl(Page, e_fragment)( "⟵", "delete", e => {
+    Page.values.pop()
     updateDisplay()
   } )
 

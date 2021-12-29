@@ -16,6 +16,8 @@ var file = new static.Server( './public', {
     gzip: true
 } );
 
+console.log(`serving on ${ port }`)
+
 // serve
 http.createServer( function ( request, response ) {
     request.addListener( 'end', function () {
