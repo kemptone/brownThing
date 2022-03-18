@@ -62,7 +62,7 @@ const BuildMain = Page => args => {
   const e_fragment = document.createDocumentFragment()
   Page.letters.forEach( BuildLetter( Page, e_fragment ) )
 
-  BuildControl(Page, e_fragment)( "SPACE", "space", e => {
+  BuildControl(Page, e_fragment)( "", "space", e => {
     Page.values.push(" ")
     updateDisplay()
   } )

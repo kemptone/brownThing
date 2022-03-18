@@ -4,14 +4,16 @@
   <link rel="stylesheet" href="style.css?1">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
   <title>Brown Thing</title>
 </head>
 <body>
   <header></header>
   <main>
-    <div id="readout"></div>
-    <div id="letters" class="letters show-numbers"></div>
+    <div id="wrap">
+      <div id="readout" contentEditable="true"></div>
+      <div id="letters" class="letters show-numbers"></div>
+    </div>
   </main>
   <footer></footer>
 </body>

@@ -1,5 +1,5 @@
 :root {
-  --buttton-width:6em;
+  --buttton-width:5em;
 }
 
 body {
@@ -18,28 +18,35 @@ main {
   flex-direction: column;
 }
 
-.letters {
+#wrap {
   display:flex;
   flex-wrap: wrap;
   align-self: center;
   margin: auto;
-  max-width: 51em;
+  max-width: 41em;
+}
+
+#letters {
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .letters button {
-  font-size: 17px;
+  font-size: 22px;
   height: 2.7em;
   min-width: var(--buttton-width);
   box-sizing: border-box;
   border: 0;
-  outline: 1px solid black;
+  /* outline: 2px solid black; */
   color:black;
   background-color:white;
-  /* flex: 1; */
+  flex: 1;
+  margin: 8px;
 }
 
 .letters button.control.space {
-  min-width: calc( var(--buttton-width) * 3 );
+  min-width: calc( var(--buttton-width) * 1 );
   flex:1;
 }
 
@@ -73,18 +80,16 @@ main {
 }
 
 #readout {
-  position:absolute;
-  left:20px;
-  right:20px;
-  top:20px;
-  width:calc(100% - 40px);
   text-align: center;
   color: white;
-  font-size: 23px;
+  font-size: 40px;
+  min-height: 1.5em;
+  flex: 1;
+  /* font-family: monospace; */
 }
 
 @media (min-height:800px) {
   #readout {
-    top:20%;
+    /* top:20%; */
   }
 }
