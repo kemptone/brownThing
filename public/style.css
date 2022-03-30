@@ -43,6 +43,7 @@ main {
   background-color:white;
   flex: 1;
   margin: 8px;
+  user-select:none;
 }
 
 .letters button.control.space {
