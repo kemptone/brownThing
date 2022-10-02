@@ -86,6 +86,8 @@ main {
   font-size: 40px;
   min-height: 1.5em;
   flex: 1;
+  background-color: black;
+  border:0;
   /* font-family: monospace; */
 }
 

@@ -1,5 +1,6 @@
 const Page = window.Page = {
-  letters : "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("")
+  // letters : "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("")
+  letters : "abcdefghijklmnopqrstuvwxyz".split("")
   , e_main : document.querySelector("main")
   , e_letters : document.querySelector("main #letters")
   , e_header : document.querySelector("header")
@@ -15,10 +16,14 @@ const BuildDisplayItem = (Page, fragment) => value => {
 }
 
 const UpdateDisplay = Page => e => {
-  const fragment = document.createDocumentFragment()
-  Page.values.forEach( BuildDisplayItem(Page, fragment) )
-  Page.e_readout.innerHTML = ""
-  Page.e_readout.appendChild( fragment )
+  // let word = ""
+  // const fragment = document.createDocumentFragment()
+  // Page.values.forEach( BuildDisplayItem(Page, fragment) )
+  // Page.values.forEach( value => word += value )
+  // Page.e_readout.value = word
+  // Page.e_readout.appendChild( fragment )
+  // Page.e_readout.value = fragment.innerHTML
+  Page.e_readout.value = Page.values.join("")
 }
 
 const updateDisplay = UpdateDisplay(Page)

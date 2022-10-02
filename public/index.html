@@ -11,7 +11,7 @@
   <header></header>
   <main>
     <div id="wrap">
-      <div id="readout" contentEditable="true"></div>
+      <input id="readout" onClick="this.setSelectionRange(0, this.value.length)" >
       <div id="letters" class="letters show-numbers"></div>
     </div>
   </main>
