@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <link rel="stylesheet" href="style.css?1">
   <meta charset="UTF-8">
@@ -7,15 +8,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
   <title>Brown Thing</title>
 </head>
+
 <body>
   <header></header>
   <main>
     <div id="wrap">
-      <input id="readout" onClick="this.setSelectionRange(0, this.value.length)" >
+      <!-- <input id="readout" onClick="this.setSelectionRange(0, this.value.length)" > -->
+      <textarea id="readout" onClick="this.setSelectionRange(0, this.value.length)"></textarea>
       <div id="letters" class="letters show-numbers"></div>
     </div>
   </main>
   <footer></footer>
 </body>
 <script async src="index.js" type="module"></script>
+
 </html>
