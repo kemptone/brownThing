@@ -7,6 +7,7 @@ const Page = window.Page = {
   , e_footer : document.querySelector("footer")
   , e_readout : document.querySelector("#readout")
   , values : []
+  , isUpper : false
 }
 
 const BuildDisplayItem = (Page, fragment) => value => {
@@ -28,13 +29,20 @@ const UpdateDisplay = Page => e => {
 
 const updateDisplay = UpdateDisplay(Page)
 
+const Uppercase = Page => e => {
+   Page.isUpper = !Page.isUpper
+   updateDisplay()
+}
+
 const ClearReadout = Page => e => {
    Page.values.length = 0 // clear out
    updateDisplay()
 }
 
 const ClickLetterEvent = (Page, letter) => e => {
-  Page.values.push(letter)
+  Page.values.push( Page.isUpper ? letter.toUpperCase() : letter )
+  if (Page.isUpper)
+    Page.isUpper = false
   updateDisplay()
 }
 
@@ -67,8 +75,15 @@ const BuildMain = Page => args => {
   const e_fragment = document.createDocumentFragment()
   Page.letters.forEach( BuildLetter( Page, e_fragment ) )
 
+  BuildControl(Page, e_fragment)( "⇧", "uppercase", Uppercase(Page) )
+
   BuildControl(Page, e_fragment)( "", "space", e => {
     Page.values.push(" ")
+    updateDisplay()
+  } )
+
+  BuildControl(Page, e_fragment)( "⟵", "delete", e => {
+    Page.values.pop()
     updateDisplay()
   } )
 
@@ -82,12 +97,7 @@ const BuildMain = Page => args => {
     Page.e_letters.classList.remove("show-letters")
   } )
 
-  BuildControl(Page, e_fragment)( "♺", "clear", ClearReadout(Page) )
 
-  BuildControl(Page, e_fragment)( "⟵", "delete", e => {
-    Page.values.pop()
-    updateDisplay()
-  } )
 
   Page.e_letters.appendChild( e_fragment )
 }
