@@ -41,8 +41,8 @@ const ClearReadout = Page => e => {
 
 const ClickLetterEvent = (Page, letter) => e => {
   Page.values.push( Page.isUpper ? letter.toUpperCase() : letter )
-  if (Page.isUpper)
-    Page.isUpper = false
+  // if (Page.isUpper)
+  //   Page.isUpper = false
   updateDisplay()
 }
 
@@ -91,6 +91,8 @@ const BuildMain = Page => args => {
     Page.e_letters.classList.add("show-letters")
     Page.e_letters.classList.remove("show-numbers")
   } )
+
+  BuildControl(Page, e_fragment)( "♺", "clear", ClearReadout(Page) )
 
   BuildControl(Page, e_fragment)( "✪", "toggle-numbers", e => {
     Page.e_letters.classList.add("show-numbers")
