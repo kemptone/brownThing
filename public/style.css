@@ -44,6 +44,7 @@ main {
   flex: 1;
   margin: 8px;
   user-select:none;
+  touch-action: manipulation;
 }
 
 .letters button.control.space {
