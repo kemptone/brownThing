@@ -10,6 +10,9 @@ const Page = window.Page = {
   , isUpper : false
 }
 
+if (window.location.search)
+  Page.countby = parseInt( Object.fromEntries( new URLSearchParams( window.location.search ) ).countby ) || 1
+
 const BuildDisplayItem = (Page, fragment) => value => {
   const e_element = document.createElement("span")
   e_element.innerHTML = value
@@ -61,7 +64,7 @@ const BuildLetter = (Page, fragment) => (letter, index) => {
   const e_em = document.createElement("em")
 
   e_b.innerHTML = letter
-  e_i.innerHTML = (index + 1)
+  e_i.innerHTML = Page.countby * (index + 1)
 
   e_element.appendChild(e_b)
   e_element.appendChild(e_i)
