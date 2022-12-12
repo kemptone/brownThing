@@ -12,6 +12,8 @@ const Page = window.Page = {
 
 if (window.location.search)
   Page.countby = parseInt( Object.fromEntries( new URLSearchParams( window.location.search ) ).countby ) || 1
+else
+  Page.countby = 1
 
 const BuildDisplayItem = (Page, fragment) => value => {
   const e_element = document.createElement("span")
